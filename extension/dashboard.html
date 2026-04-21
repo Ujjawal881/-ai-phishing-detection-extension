@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Phishing Guard Dashboard</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="dashboard.css">
+
+  <!-- Chart.js -->
+  <script src="chart.js"></script>
+
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1>🛡 AI Phishing Guard Dashboard</h1>
+      <p class="subtitle">Real-time phishing detection & threat analytics</p>
+    </header>
+
+    <!-- STATS -->
+    <section class="stats">
+
+      <div class="card safe">
+        <h2 id="safeCount">0</h2>
+        <p>Safe Websites</p>
+      </div>
+
+      <div class="card danger">
+        <h2 id="phishCount">0</h2>
+        <p>Phishing Detected</p>
+      </div>
+
+      <div class="card total">
+        <h2 id="totalCount">0</h2>
+        <p>Total Scans</p>
+      </div>
+
+    </section>
+
+    <!-- CHARTS -->
+    <section class="charts">
+
+      <div class="chart-box">
+        <h3>📊 Threat Distribution</h3>
+        <canvas id="pieChart"></canvas>
+      </div>
+
+      <div class="chart-box">
+        <h3>📈 Risk Score Analysis</h3>
+        <canvas id="barChart"></canvas>
+      </div>
+
+      <div class="chart-box full-width">
+        <h3>📉 Threat Trend Over Time</h3>
+        <canvas id="lineChart"></canvas>
+      </div>
+
+    </section>
+
+    <!-- TABLE -->
+    <section class="activity">
+
+      <h2 class="section-title">📋 Recent Activity</h2>
+
+      <div id="tableContainer">
+        <table>
+          <thead>
+            <tr>
+              <th>URL</th>
+              <th>Score</th>
+              <th>Status</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="logTable"></tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>⚡ Powered by AI Phishing Detection Engine</p>
+    </footer>
+
+  </div>
+
+  <!-- JS -->
+  <script src="dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+/* =========================
+   GLOBAL
+========================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0a0f1c, #020617);
+    color: white;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    padding: 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.subtitle {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+/* =========================
+   STATS CARDS
+========================= */
+.stats {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 220px;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.6),
+        inset 0 0 10px rgba(255,255,255,0.05);
+
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+}
+
+/* Glow effect */
+.card::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Colors */
+.safe {
+    border-left: 5px solid #00ff9f;
+    box-shadow: 0 0 15px rgba(0,255,159,0.3);
+}
+
+.danger {
+    border-left: 5px solid #ff3b3b;
+    box-shadow: 0 0 15px rgba(255,59,59,0.3);
+}
+
+.total {
+    border-left: 5px solid #3b82f6;
+    box-shadow: 0 0 15px rgba(59,130,246,0.3);
+}
+
+/* =========================
+   CHARTS
+========================= */
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.chart-box {
+    flex: 1;
+    min-width: 300px;
+
+    padding: 20px;
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.chart-box:hover {
+    transform: scale(1.02);
+}
+
+/* Full width chart */
+.full-width {
+    flex: 100%;
+}
+
+/* Chart titles */
+.chart-box h3 {
+    margin-bottom: 10px;
+    color: #d1d5db;
+}
+
+/* =========================
+   TABLE
+========================= */
+.section-title {
+    margin-top: 30px;
+}
+
+#tableContainer {
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: rgba(255,255,255,0.08);
+    color: #e5e7eb;
+}
+
+td {
+    color: #d1d5db;
+}
+
+tr {
+    transition: 0.2s;
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* =========================
+   STATUS COLORS
+========================= */
+.safe-text {
+    color: #00ff9f;
+    font-weight: bold;
+}
+
+.danger-text {
+    color: #ff3b3b;
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* =========================
+   SCROLLBAR (COOL LOOK)
+========================= */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1f2937;
+    border-radius: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+    }
+
+    .charts {
+        flex-direction: column;
+    }
+}
